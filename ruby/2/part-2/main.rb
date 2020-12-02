@@ -12,7 +12,7 @@ DATA.each_line do |line|
     .map { Regexp.last_match.begin(0) + 1 }
     .reject { |i| i != min.to_i && i != max.to_i }
 
-  if positions.empty? && (occurrences.none? || positions.none?) || (positions.include?(min.to_i) && positions.include?(max.to_i))
+  if (occurrences.none? || positions.none?) || (positions.include?(min.to_i) && positions.include?(max.to_i))
     next
   end
 
